@@ -34,67 +34,6 @@ public class InitService {
     @Autowired
     private UserRepository userRepository;
 
-//    public boolean initialize() {
-//        City city1 = new City("Delhi");
-//        City city2 = new City("Imphal");
-//        City city3 = new City("Chenai");
-//        City city4 = new City("Kochi");
-//
-//        cityRepository.save(city1);
-//        cityRepository.save(city2);
-//        cityRepository.save(city3);
-//        cityRepository.save(city4);
-//
-//        City savedCity1 = cityRepository.findCityByName("Delhi");
-//        City savedCity2 = cityRepository.findCityByName("Imphal");
-//        City savedCity3 = cityRepository.findCityByName("Chenai");
-//        City savedCity4 = cityRepository.findCityByName("Kochi");
-//
-//        Theatre theatre1 = new Theatre("AshishMultiplex", "CP, Delhi");
-//        Theatre theatre2 = new Theatre("NitinIMAX", "Select City , Delhi");
-//
-//        theatreRepository.save(theatre1);
-//        theatreRepository.save(theatre2);
-//
-//        Theatre savedTheatre1 = theatreRepository.findTheatreByName("AshishMultiplex");
-//        Theatre savedTheatre2 = theatreRepository.findTheatreByName("NitinIMAX");
-//
-//        List<Theatre> theatreList1 = new ArrayList<>();
-//        theatreList1.add(savedTheatre1);
-//        theatreList1.add(savedTheatre2);
-//        savedCity1.setTheatres(theatreList1);
-//        cityRepository.save(savedCity1);
-//
-//        for(int i = 1; i <= 5; i++) {
-//            Seat s = new Seat(i, i, "A" + i, SeatType.GOLD, SeatStatus.AVAILABLE);
-//            seatRespository.save(s);
-//        }
-//
-//        List<Seat> savedSeats = seatRespository.findAll();
-//
-//        Auditorium auditorium = new Auditorium();
-//        auditorium.setName("Audi01");
-//        auditorium.setCapacity(5);
-//        auditorium.setAuditoriumFeatures(List.of(AuditoriumFeature.DOLBY, AuditoriumFeature.IMAX));
-//        auditorium.setSeats(savedSeats);
-//        auditoriumRespository.save(auditorium);
-//
-//        Auditorium savedAuditorium = auditoriumRespository.findAuditoriumByName("Audi01");
-//        List<Auditorium> auditoriums = new ArrayList<>();
-//        auditoriums.add(savedAuditorium);
-//
-//        Theatre savedTheatreNew1 = theatreRepository.findTheatreByName("AshishMultiplex");
-//        savedTheatreNew1.setAuditoriums(auditoriums);
-//        theatreRepository.save(savedTheatreNew1);
-//
-//        // ISSUE
-////        Theatre savedTheatreNew2 = theatreRepository.findTheatreByName("NitinIMAX");
-////        savedTheatreNew2.setAuditoriums(auditoriums);
-////        theatreRepository.save(savedTheatreNew2);
-//
-//        return true;
-//    }
-
     @Transactional(readOnly = false, propagation = Propagation.REQUIRED)
     public boolean initialize(){
         City delhi = new City("Delhi");
