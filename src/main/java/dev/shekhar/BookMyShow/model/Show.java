@@ -2,6 +2,7 @@ package dev.shekhar.BookMyShow.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,7 +11,7 @@ import java.util.List;
 
 @Getter
 @Setter
-@Entity
+@Entity(name = "BMS_SHOW")
 public class Show extends BaseModel {
     private LocalDateTime startTime;
     private LocalDateTime endTime;
@@ -18,6 +19,7 @@ public class Show extends BaseModel {
     private Movie movie;
     @ManyToOne
     private Auditorium auditorium;
-    private List<ShowSeat> showSeats;
+    @OneToMany
+    private List<ShowSeat> showSeat;
 
 }
